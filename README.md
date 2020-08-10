@@ -3,7 +3,7 @@
 
 Landing page : 
 
-![alt text](https://imgur.com/6FIGw0o)
+![alt text](https://i.imgur.com/6FIGw0o.png)
 
 Searching : 
 
