@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+        .fa {
+          font-size: 30px;
+          cursor: pointer;
+          user-select: none;
+        }
+        
+        .fa:hover {
+          color: darkblue;
+        }
+</style>
+
+    <form action="" method="post" novalidate>
+
+        <p>
+                <h4>Select Book Title</h4>
+                <div class="styled">
+                {{ form.bookTitle }}
+                </div>
+                <br>
+                {% for error in form.bookTitle.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+           
+        <p>
+                <div class = " review-card card" style="height:300px">
+                        
+                                {{ form.hidden_tag() }}
+                                <p>
+                                        <h3>Review</h3>
+                                </p>
+                        
+                                <p>
+                                        {{ form.reviewText(cols="150",rows="8")}}
+                                        {% for error in form.reviewText.errors %}
+                                        <span style="color: red;">[{{ error }}]</span>
+                                        {% endfor %}
+                                    </p>
+
+                 </div>           
+                            
+                 
+
+         </p> 
+         <p>
+            <div class="wrap">
+                Would you recommend this book ? <i onclick = "toggleFuction(this)" class="fa fa-thumbs-up"></i>
+            </div>
+                {{form.recommend}}
+         </p>
+         <p>
+                {{ form.submit }}
+         </p>  
+    </form>
+         <p>
+                <button type="button" class="button"><a href="/index">Show pervious Reviews</a></button>
+         </p>
+         <p>
+                
+                 
+                 
+                 <script>
+                         let recommend = true
+                         function toggleFuction(x){
+                                recommend= !recommend;
+                                x.classList.toggle("fa-thumbs-down");
+                                document.getElementById("recommend").checked=recommend;
+                                console.log(document.getElementById("recommend").checked);
+                                return recommend;
+                         }
+                 </script>
+
+         </p>
+
+            
+</form>
+
+{% endblock %}

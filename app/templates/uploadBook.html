@@ -1,0 +1,100 @@
+  
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h5>Upload Book</h5>
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    {{ bookForm.hidden_tag() }}
+<p>
+    {{ bookForm.bookTitle.label }}<br>
+    {{ bookForm.bookTitle(size=32) }}<br>
+    {% for error in bookForm.bookTitle.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p>
+    {{ bookForm.bookCover.label }}<br>
+    {{ bookForm.bookCover }}<br>
+    {% for error in bookForm.bookCover.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p>
+    {{ bookForm.bookAuthor.label }}<br>
+    <div class="styled">
+    {{ bookForm.bookAuthor }}
+    </div>
+    <br>
+    {% for error in bookForm.bookAuthor.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p>
+    {{ bookForm.bookGenre.label }}<br>
+    <div class="styled">
+    {{ bookForm.bookGenre }}
+    </div>
+    <br>
+    {% for error in bookForm.bookGenre.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p>
+    {{ bookForm.submitBook }}
+</p>
+
+</form>
+
+<hr></hr>
+
+<h5>Upload Author</h5>
+
+
+
+<form action="" method="post" >
+    {{ authorForm.hidden_tag() }}
+<p>
+    {{ authorForm.authorName.label }}<br>
+    {{ authorForm.authorName(size=32) }}<br>
+    {% for error in authorForm.authorName.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p>
+    {{ authorForm.submitAuthor }}
+</p>
+</form>
+
+
+<hr></hr>
+
+<h5>Upload Genre</h5>
+
+<form action="" method="post" >
+    {{ genreForm.hidden_tag() }}
+<p>
+    {{ genreForm.genreName.label }}<br>
+    {{ genreForm.genreName(size=32) }}<br>
+    {% for error in genreForm.genreName.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p>
+    {{ genreForm.submitGenre }}
+</p>
+</form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+
+    <div class="row">
+
+        <!-- LATEST POSTS -->
+
+        <div class="col-md-4">
+
+            <div class="latestReviews">
+                Latest
+            </div>
+
+            {% for review in latest %}
+            
+            <div class="card review-card">
+                
+                <div class="userThoughts">
+                    <div class="username">{{review['username']}} </div>
+                    <div class="rating"> 
+                        
+                        {% if review['rec'] %}
+
+                        <i class="fa fa-thumbs-up" aria-hidden="true" style="padding-left:5px;"> </i>
+                        
+                        {% else %}
+
+                        <i class="fa fa-thumbs-down" aria-hidden="true" style="padding-left:5px;"> </i>
+
+                        {% endif %}
+
+                    </div>
+                </div>  
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="wrapper"  style="width:80%">
+                            <img class="bookCover" src="static/images/tbooks/{{review['bid']|string}}.jpg" >
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        
+                        <div class="bookDetails">
+                            <p><b>Title : </b>{{review['btitle']}}</p>
+                            <p><b>Author : </b>{{review['aname']}}</p>
+                        </div>
+
+                        <div class="subjectiveReview">
+
+                            {{review['content']}}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <!-- /LATEST POSTS -->
+
+        <!-- CONTENT -->
+
+        <div class="col-md-8">
+            
+            <!-- QUERY -->
+            <div class="searchWrapper">
+                <form>
+                        <div class="searchicondiv" style="width:20%;float:left;" type="submit">
+                            <div class="wrapper1">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    
+                    <div style="width:80%;float:right">
+                        <input class="searchBar" type="text">
+                    </div>
+                </form>
+            </div>
+            <!-- /QUERY -->
+
+
+            <div class="content-wrapper">
+
+                <!-- CAROUSELS  -->
+                <div id="carousels" >
+
+                    <div class="netflix-carousel" style="padding-top:9px;overflow-x: hidden;">
+
+                        <div class="genre">
+                            <h4> Top rated </h4>
+                        </div>
+
+                        <!-- <button class="owl-next">next</button>
+                        <button class="owl-prev">prev</button> -->
+
+                        <div class="gallery0 owl-carousel" >
+
+                            {% for book in toprated %}
+
+                            <div class="galitem">
+                                <img src="static/images/tbooks/{{book['bid']|string}}.jpg" class="bookCover" data-btitle="{{book['btitle']}}" >
+                               
+                                <br><b>rated</b><br> {{book['arating']}}%
+                            </div>
+                            
+                            {% endfor %}
+                        
+                        </div>
+
+
+                    </div>
+
+                    
+                    {% for genre in genres %}
+
+                    {% if genre['books'] %}
+
+                        <div class="netflix-carousel" style="padding-top:9px;">
+
+                            <div class="genre">
+                                <h4> {{ genre['gname'] }} </h4>
+                            </div>
+
+                            <!-- <button class="owl-next">next</button>
+                            <button class="owl-prev">prev</button> -->
+
+                            <div class="gallery1 owl-carousel" >
+
+                                {% for book in genre['books'] %}
+
+                                <div class="galitem">
+                                    <img src="static/images/tbooks/{{book['bid']|string}}.jpg" class="bookCover" id="b{{book['bid']|string}}g{{book['gid']|string}}" data-btitle="{{book['btitle']}}" >
+                                    <br><b>rated</b><br> {{book['arating']}}%
+                                </div>
+                                
+                                {% endfor %}
+                            
+                            </div>
+
+
+                        </div>
+
+                    {% endif %}
+
+                    {% endfor %}
+
+                    
+
+                </div>
+
+                <!-- /CAROUSELS -->
+
+                <!-- REVIEWS -->
+                <div class="reviews hide">
+
+                    {% for review in allr %}
+                    <div class="card review-card queried">
+                
+                        <div class="userThoughts">
+                            <div class="username">{{review['username']}} </div>
+                            <div class="rating"> 
+
+                                {% if review['rec'] %}
+
+                                <i class="fa fa-thumbs-up" aria-hidden="true" style="padding-left:5px;"> </i>
+                                
+                                {% else %}
+        
+                                <i class="fa fa-thumbs-down" aria-hidden="true" style="padding-left:5px;"> </i>
+        
+                                {% endif %}
+
+                            </div>
+                        </div>  
+        
+                        <div class="row">
+        
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="wrapper"  style="width:80%">
+                                    <img class="bookCover" src="static/images/tbooks/{{review['bid']|string}}.jpg" >
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                
+                                <div class="bookDetails">
+                                    <p><b>Title : </b>{{review['btitle']}}</p>
+                                    <p><b>Author : </b>{{review['aname']}}</p>
+                                </div>
+        
+                                <div class="subjectiveReview">
+                                    {{review['content']}}
+                                </div>
+        
+                            </div>
+        
+                        </div>
+        
+                    </div>
+                    
+                    {% endfor %}
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- /CONTENT -->
+
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,251 @@
+
+.top{
+    color:blue;
+}
+
+.center{
+    margin: auto;
+    text-align: center;
+}
+
+.nav-content{
+    display: inline-flex;
+}
+
+.login-card{
+    padding-top: 80px;
+    border-radius: 10px;
+    width: 400px;
+    top: 65px;
+    border-color: black;
+    box-shadow: (1px , 1px , 1px);
+    /* border: rgb(0 ,0 ,0); */
+    /* margin-bottom: 32px; */
+    height: 450px;
+    padding-top:80px;background: #fdf8f2;
+    height: auto;
+  
+}
+
+.full-height{
+    height:100%;
+}
+body{
+    background: #eac76412;
+    background-color:rgba(236, 241, 212, 0.36);
+    height:auto;
+}
+
+.mainLogo{
+    margin-top: 1;
+    margin-bottom: -20px;
+    color: #76780e !important;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.login-active{
+    color: #b7b941 !important;
+    cursor: pointer;
+}
+
+
+a {
+    color: #76780e;
+    text-decoration: none !important;
+}
+
+a:hover, a:focus {
+    color: #b7b941;
+}
+
+.latestReviews{
+
+    text-align: center;
+    color: #76780e;
+    background: #e8e9a6;
+    
+}
+
+.searchBar{
+    width: 100%;
+    height:24px;
+}
+
+.searchicondiv{
+    background: #e8e9a6;
+    height:24px;
+}
+
+.userThoughts{
+    padding-top:5px;
+}
+
+.wrapper{
+    margin:auto;
+    padding-top:10px;
+    text-align: center;
+}
+
+.wrapper1{
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    vertical-align: middle;
+    padding-top: 3px;
+}
+
+.username{
+    float: left;
+    font-size: 12px;
+}
+
+.bookCover{
+    
+    height:250px;
+}
+
+.review-card{
+    margin-top: 10px;
+    border-width: thick;
+    box-shadow: 0px 1px 2px;
+    border-color: #e8e9a6
+}
+
+.bookDetails{
+    text-align: center;
+    font-size:12px;
+    padding-top:5px;
+}
+
+.subjectiveReview{
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.success{
+    color:green;
+}
+
+.error{
+    color:red;
+}
+
+.searchWrapper{
+    height:25px;
+    width:100%;
+}
+
+.gallery1{
+	max-width: 1000px;
+	width: 100%;
+	overflow-x: hidden;
+}
+.gallery2{
+	max-width: 1000px;
+	width: 100%;
+	overflow-x: hidden;
+}
+.gallery3{
+	max-width: 1000px;
+	width: 100%;
+	overflow-x: hidden;
+}
+.gallery4{
+	max-width: 1000px;
+	width: 100%;
+	overflow-x: hidden;
+}
+.owl-stage{
+    display: flex;
+}
+.flex-control-nav.flex-control-paging {
+    display:none;
+}
+
+.owl-next{
+    height: 250px;
+    transform: translate(0px, -18.65em);
+    float: right
+}
+
+.owl-prev{
+    height: 250px;
+    transform: translate(0px, -18.65em);
+    float: left
+}
+
+.galitem{
+    text-align:center;
+}
+
+.netflix-carousel{
+    height: 473px;
+    overflow-y: hidden;
+}
+
+.genre{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#searchBox{
+    width: 100%;
+    height:24px;
+}
+/* 
+#submit{
+    display: none;
+} */
+
+.hide{
+    display: none;
+}
+
+.searchWrapper{
+    margin-top:-15px;
+}
+
+
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #F07575; /* Fallback color if gradients are not supported */
+    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Firefox (3.6 to 15) */
+    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of Internet Explorer  10*/
+    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */
+    background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#recommend{
+    display: none;
+}
+
+img{
+    cursor: pointer;
+}
+
+.gal-item{
+    cursor: pointer;
+}
